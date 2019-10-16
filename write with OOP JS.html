@@ -1,99 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JS Letter</title>
-	<style type="text/css">
-		body{
-	    line-height: 13px;
-    font-size: 15px;
-    color: #a50f36;
-    font-weight: bold;
-		}
-		span{
-	display: block;
-    float: left;
-    margin: 5px;
-		}
-	</style>
+    <title>JS Letter</title>
+    <style type="text/css">
+        body {
+            line-height: 13px;
+            font-size: 15px;
+            color: #a50f36;
+            font-weight: bold;
+        }
+
+        span {
+            display: block;
+            float: left;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
 
-	<script type="text/javascript">
- 
-document.write('<br><br><h2> Letter Write with symbol</h2>');
-		
-		const letterWriting={
-			 drawAbleString:'',
-			 letterMaping:{
-					a:[7,8,9,12,13,14,22,23,24,27,28,29,32,33,34],
-				    b:[7,8,9,12,13,14,22,23,24,27,28,29],
-				    c:[7,8,9,12,13,14,17,18,22,23,24,25,27,28,29,30],
-				    d:[5,7,8,9,12,13,14,17,18,19,22,23,24,27,28,29,35],
-				    e:[7,8,9,10,12,13,14,15,19,20,22,23,24,25,27,28,29,30],
-				    f:[7,8,9,10,12,13,14,15,19,20,22,23,24,25,27,28,29,30,32,33,34,35],
-				    g:[7,8,9,12,13,14,17,18,19,20,22,27,28,29],
-				    h:[2,3,4,7,8,9,12,13,14,22,23,24,27,28,29,32,33,34],
-				    l:[2,3,4,5,7,8,9,10,12,13,14,15,17,18,19,20,22,23,24,25,27,28,29,30],
-				    m:[3,8,12,14,17,18,19,22,23,24,27,28,29,32,33,34],
-				    n:[4,7,9,12,14,17,19,22,24,27,29,32],
-				    o:[7,8,9,12,13,14,17,18,19,22,23,24,27,28,29],
-				    s:[7,8,9,10,12,13,14,15,21,22,23,24,26,27,28,29],
-				    r:[7,8,9,18,19,20,22,24,25,27,28,30,32,33,34],
-			 },
-			generateLetter:function(lt){
-				let x=0,self=this;
-				if(lt===' '){
-					document.write('<span>&nbsp;&nbsp;</span>');
-					return false;
-				} 
-			 
- 
-				let leter=eval('self.letterMaping.'+lt.toLowerCase());; 
-				 
-				document.write('<span>');
-				for (let i = 1; i <= 7; i++) {
-							for (var j = 1; j <= 5; j++) {
-								x++;
+<script type="text/javascript">
+
+    document.write('<br><br><h2> Letter Write with symbol</h2>');
+
+    const letterWriting = {
+        drawAbleString: '',
+        letterMaping: {
+            a: [7, 8, 9, 12, 13, 14, 22, 23, 24, 27, 28, 29, 32, 33, 34],
+            b: [7, 8, 9, 12, 13, 14, 22, 23, 24, 27, 28, 29],
+            c: [7, 8, 9, 12, 13, 14, 17, 18, 22, 23, 24, 25, 27, 28, 29, 30],
+            d: [5, 7, 8, 9, 12, 13, 14, 17, 18, 19, 22, 23, 24, 27, 28, 29, 35],
+            e: [7, 8, 9, 10, 12, 13, 14, 15, 19, 20, 22, 23, 24, 25, 27, 28, 29, 30],
+            f: [7, 8, 9, 10, 12, 13, 14, 15, 19, 20, 22, 23, 24, 25, 27, 28, 29, 30, 32, 33, 34, 35],
+            g: [7, 8, 9, 12, 13, 14, 17, 18, 19, 20, 22, 27, 28, 29],
+            h: [2, 3, 4, 7, 8, 9, 12, 13, 14, 22, 23, 24, 27, 28, 29, 32, 33, 34],
+            l: [2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20, 22, 23, 24, 25, 27, 28, 29, 30],
+            m: [3, 8, 12, 14, 17, 18, 19, 22, 23, 24, 27, 28, 29, 32, 33, 34],
+            n: [4, 7, 9, 12, 14, 17, 19, 22, 24, 27, 29, 32],
+            o: [7, 8, 9, 12, 13, 14, 17, 18, 19, 22, 23, 24, 27, 28, 29],
+            s: [7, 8, 9, 10, 12, 13, 14, 15, 21, 22, 23, 24, 26, 27, 28, 29],
+            r: [7, 8, 9, 18, 19, 20, 22, 24, 25, 27, 28, 30, 32, 33, 34],
+        },
+        generateLetter: function (lt) {
+            let x = 0, self = this;
+            if (lt === ' ') {
+                document.write('<span>&nbsp;&nbsp;</span>');
+                return false;
+            }
 
 
-								
-								if(leter.includes(x)){
+            let leter = eval('self.letterMaping.' + lt.toLowerCase());
+            ;
 
-									document.write('&nbsp;&nbsp;&nbsp;');
-
-								}else{
-									document.write('P');
-								}
-								 
-								
-								}
-									document.write('<br>');
-
-					}
-
-					document.write('</span>');
-	
-			},
-			extractString:function(){
-				let self=this;
-				 for (var sc =0; sc < self.drawAbleString.length; sc++) {
- 	
-					this.generateLetter(self.drawAbleString[sc]);
-					document.write('');
-				}
-			},
-			init:function(str){
-				this.drawAbleString=str;
-				this.extractString();
-			}
-		
-		}
+            document.write('<span>');
+            for (let i = 1; i <= 7; i++) {
+                for (var j = 1; j <= 5; j++) {
+                    x++;
 
 
-letterWriting.init('md al emran hossen');
- 
+                    if (leter.includes(x)) {
 
-	</script>
+                        document.write('&nbsp;&nbsp;&nbsp;');
+
+                    } else {
+                        document.write('P');
+                    }
+
+
+                }
+                document.write('<br>');
+
+            }
+
+            document.write('</span>');
+
+        },
+        extractString: function () {
+            let self = this;
+            for (var sc = 0; sc < self.drawAbleString.length; sc++) {
+
+                this.generateLetter(self.drawAbleString[sc]);
+                document.write('');
+            }
+        },
+        init: function (str) {
+            this.drawAbleString = str;
+            this.extractString();
+        }
+
+    }
+
+
+    letterWriting.init('md al emran hossen');
+
+
+</script>
 
 </body>
 </html>
